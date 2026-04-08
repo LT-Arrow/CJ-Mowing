@@ -2,60 +2,437 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CJ Mowing & Landscaping</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <meta
+    name="description"
+    content="CJ Mowing & Landscaping offers affordable lawn mowing, edging, weed eating, bush removal, stump removal, and gutter cleaning."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f7f3;
+      color: #1f1f1f;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      background: #1f7a4d;
+      color: white;
+      padding: 18px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2fa866;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #248a53;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #1f7a4d;
+    }
+
+    .btn.secondary:hover {
+      background: #e9f5ee;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(15, 54, 34, 0.65), rgba(15, 54, 34, 0.65)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      color: white;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 26px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #1f7a4d;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 32px;
+      color: #555;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #1f7a4d;
+    }
+
+    .pricing {
+      background: #eef7f0;
+    }
+
+    .pricing-list {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .pricing-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 20px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .pricing-row:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-row strong {
+      color: #1f7a4d;
+    }
+
+    .about-box {
+      background: white;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-box,
+    .form-box {
+      background: white;
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-box h3,
+    .form-box h3 {
+      margin-bottom: 14px;
+      color: #1f7a4d;
+    }
+
+    .contact-box p {
+      margin-bottom: 12px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #cfcfcf;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #143d29;
+      color: white;
+      text-align: center;
+      padding: 24px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-row {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<header>
-  <h1>CJ Mowing & Landscaping</h1>
-  <a href="tel:5037325364" class="btn">📞 Call Now</a>
-</header>
+  <header>
+    <div class="nav-container">
+      <div class="logo">CJ Mowing & Landscaping</div>
+      <div class="nav-buttons">
+        <a href="tel:5037325364" class="btn">Call Now</a>
+        <a href="sms:5037325364" class="btn secondary">Text for Quote</a>
+      </div>
+    </div>
+  </header>
 
-<section class="hero">
-  <h2>Affordable Lawn Care Starting at $20</h2>
-  <p>Serving your local area. Fast, reliable, and professional.</p>
-  <a href="tel:5037325364" class="btn">Get Service Today</a>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Affordable Lawn Care Starting at $20</h1>
+      <p>
+        Professional mowing, edging, weed eating, bush removal, stump removal,
+        and gutter cleaning. Fast, reliable service for homes in your area.
+      </p>
+      <div class="hero-buttons">
+        <a href="tel:5037325364" class="btn">Get Service Today</a>
+        <a href="#quote" class="btn secondary">Request a Quote</a>
+      </div>
+    </div>
+  </section>
 
-<section class="services">
-  <h2>Our Services</h2>
-  <ul>
-    <li>Lawn Mowing</li>
-    <li>Edging (+$5)</li>
-    <li>Weed Eating</li>
-    <li>Bush & Stump Removal</li>
-    <li>Gutter Cleaning</li>
-  </ul>
-</section>
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <p class="section-intro">
+      We offer straightforward, affordable outdoor services to help keep your
+      property looking clean and well-maintained.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Lawn Mowing</h3>
+        <p>Clean, even mowing to keep your yard looking fresh and maintained.</p>
+      </div>
+      <div class="card">
+        <h3>Edging</h3>
+        <p>Sharp edges along sidewalks, driveways, and borders for a finished look.</p>
+      </div>
+      <div class="card">
+        <h3>Weed Eating</h3>
+        <p>Trim hard-to-reach areas and overgrowth around fences and corners.</p>
+      </div>
+      <div class="card">
+        <h3>Bush Removal</h3>
+        <p>Remove unwanted bushes and overgrown plants to clean up your yard.</p>
+      </div>
+      <div class="card">
+        <h3>Stump Removal</h3>
+        <p>Clear old stumps that get in the way and make your yard look unfinished.</p>
+      </div>
+      <div class="card">
+        <h3>Gutter Cleaning</h3>
+        <p>Help protect your home by clearing leaves and debris from your gutters.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="pricing">
-  <h2>Pricing</h2>
-  <p>Mowing: $20 per lawn</p>
-  <p>Edging: $5 add-on</p>
-  <p>Other Services: $20/hour</p>
-  <p>Travel: +$3 per 5 miles</p>
-</section>
+  <section class="section pricing" id="pricing">
+    <h2>Simple Pricing</h2>
+    <p class="section-intro">
+      Clear pricing makes it easier to know what to expect before you book.
+    </p>
+    <div class="pricing-list">
+      <div class="pricing-row">
+        <span><strong>Lawn Mowing</strong></span>
+        <span>$20 per lawn</span>
+      </div>
+      <div class="pricing-row">
+        <span><strong>Edging</strong></span>
+        <span>$5 add-on</span>
+      </div>
+      <div class="pricing-row">
+        <span><strong>Other Services</strong></span>
+        <span>$20 per hour</span>
+      </div>
+      <div class="pricing-row">
+        <span><strong>Travel Fee</strong></span>
+        <span>+$3 per 5 miles</span>
+      </div>
+    </div>
+  </section>
 
-<section class="contact">
-  <h2>Request a Quote</h2>
+  <section class="section" id="about">
+    <h2>Why Choose CJ Mowing & Landscaping?</h2>
+    <div class="about-box">
+      <p>
+        We focus on affordable prices, dependable service, and making your yard
+        look its best. Whether you need a quick mow before an event or regular
+        yard work to stay on top of maintenance, CJ Mowing & Landscaping is here
+        to help.
+      </p>
+    </div>
+  </section>
 
-  <form name="contact" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="contact">
+  <section class="section" id="quote">
+    <h2>Request a Quote</h2>
+    <p class="section-intro">
+      Call, text, or send a quote request through the form below.
+    </p>
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="text" name="location" placeholder="Your Address" required>
-    <textarea name="message" placeholder="What do you need done?" required></textarea>
+    <div class="contact-wrap">
+      <div class="contact-box">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> 503-732-5364</p>
+        <p><strong>Business:</strong> CJ Mowing & Landscaping</p>
+        <p>
+          Reach out for mowing, cleanups, edging, removals, gutter cleaning,
+          and more.
+        </p>
 
-    <button type="submit">Send Request</button>
-  </form>
-</section>
+        <div class="contact-links">
+          <a href="tel:5037325364" class="btn">Call 503-732-5364</a>
+          <a href="sms:5037325364" class="btn secondary">Text for a Quote</a>
+        </div>
+      </div>
 
-<footer>
-  <p>© CJ Mowing & Landscaping</p>
-</footer>
+      <div class="form-box">
+        <h3>Send a Quote Request</h3>
+        <form
+          name="quote-request"
+          method="POST"
+          data-netlify="true"
+          netlify
+          action="/success"
+        >
+          <input type="hidden" name="form-name" value="quote-request" />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="tel" name="phone" placeholder="Your Phone Number" required />
+          <input type="text" name="address" placeholder="Service Address" required />
+          <textarea
+            name="message"
+            placeholder="Tell us what work you need done"
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>CJ Mowing & Landscaping</strong></p>
+    <p>Call or text: 503-732-5364</p>
+    <p>&copy; 2026 CJ Mowing & Landscaping. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
